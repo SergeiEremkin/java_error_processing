@@ -14,6 +14,7 @@ public class Task2 {
 
         HashMap<String, String> map = readFromFile();
         showMap(map);
+        writeToFile(map);
 
         // for (Map.Entry entry : map.entrySet()) {
 
@@ -36,7 +37,6 @@ public class Task2 {
                 line += (char) c;
 
             }
-            // System.out.print(line);
             String[] lines = line.split("\n");
             for (int i = 0; i < lines.length; i++) {
                 String[] x = lines[i].split("=");
@@ -58,20 +58,19 @@ public class Task2 {
     public static void findChar(Map.Entry<String, String> entry) {
 
         if (entry.getValue().equals("?") || entry.getValue().equals("?\n")) {
-            System.out.println(String.valueOf(entry.getKey().length()));
+            entry.setValue(String.valueOf(entry.getKey().length()));
         }
 
     }
 
     public static void writeToFile(HashMap<String, String> map) {
         try {
-            FileWriter writer = new FileWriter("Seminar2/data2.txt" );
+            FileWriter writer = new FileWriter("Seminar2/data2.txt");
             for (Map.Entry entry : map.entrySet()) {
-                writer.append(entry.getKey() + "=" + entry.getValue());
-                // System.out.println("Key: " + entry.getKey() + " Value: "
-                // + entry.getValue());
+                writer.append(entry.getKey() + "=" + entry.getValue() + "\n");
 
             }
+            writer.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

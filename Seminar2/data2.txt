@@ -1,0 +1,4 @@
+Vladimir=8
+Anna=4
+Elena=5
+Marina=6
