@@ -4,7 +4,7 @@ public class Task2 {
     public static void main(String[] args) {
         int index = 8;
         int[] intArray = new int[index];
-        int d = 1;
+        int d = 0;
         if (d == 0) {
             throw new ArithmeticException("Catching exception: division by zero ");
         }
